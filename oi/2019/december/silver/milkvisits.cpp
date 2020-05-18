@@ -17,7 +17,7 @@ void dfs(int node){
   	return;
   comp[node]=cmpcnt;
   for(int a:adj[node])
-  	if(cows[a-1]==cows[node-1])
+    if(cows[a-1]==cows[node-1])
   	  dfs(a);
 }
 int main() {
