@@ -59,12 +59,11 @@ struct DSU {
     a=find(a);
     b=find(b);
     if(a!=b){
-      if(sizes[a]<sizes[b]){
+      if(sizes[a]<sizes[b])
         swap(a,b);
-        dsu[b]=a;
-        sizes[a]+=sizes[b];
-      }
-      --cc;
+     dsu[b]=a;
+     sizes[a]+=sizes[b];
+     --cc;
     }
   }
   bool connected (int a, int b) {
@@ -78,7 +77,7 @@ int re[MX];
 vi path[MX];
 vector<string> ans;
 int32_t main () {
-  //setIO("closing");
+  setIO("closing");
   cin >> N >> M;
   struct DSU farm;
   struct DSU start;
@@ -99,7 +98,7 @@ int32_t main () {
     trav(v, path[node])
       if(beenthere[v])
         farm.merge(node,v);
-    if(farm.cc-i==1)
+    if(farm.cc-i==1||farm.cc==1)
       ans.pb("YES\n");
     else
       ans.pb("NO\n");
